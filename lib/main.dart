@@ -8,20 +8,40 @@ void main() => runApp(BasicDemo());
 class BasicDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    List<int> list = [1, 2, 3, 4, 5];
-    return Scaffold(
-      appBar: AppBar(title: Text('お話ししましょう')),
-      body: Expanded(
-        child: Container(
-          child: CarouselSlider(
-            options: CarouselOptions(),
-            items: list
-                .map((item) => Container(
-                      child: Center(child: Text(item.toString())),
-                      color: Colors.green,
-                    ))
-                .toList(),
-          ),
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(title: Text('お話ししましょう')),
+        body: Container(
+          child: CarouselSlider(options: CarouselOptions(), items: <Widget>[
+            Container(
+              height: double.infinity,
+              child: Center(
+                child: Text('1'),
+              ),
+              decoration: BoxDecoration(color: Colors.green),
+            ),
+            Container(
+              height: double.infinity,
+              child: Center(
+                child: Text('2'),
+              ),
+              decoration: BoxDecoration(color: Colors.redAccent),
+            ),
+            Container(
+              height: double.infinity,
+              child: Center(
+                child: Text('3'),
+              ),
+              decoration: BoxDecoration(color: Colors.grey),
+            ),
+            Container(
+              height: double.infinity,
+              child: Center(
+                child: Text('4'),
+              ),
+              decoration: BoxDecoration(color: Colors.white),
+            ),
+          ]),
         ),
       ),
     );
