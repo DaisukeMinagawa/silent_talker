@@ -1,4 +1,3 @@
-import 'package:carousel_slider/carousel_controller.dart';
 import 'package:carousel_slider/carousel_options.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
@@ -11,37 +10,23 @@ class BasicDemo extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(title: Text('お話ししましょう')),
-        body: Container(
-          child: CarouselSlider(options: CarouselOptions(), items: <Widget>[
-            Container(
-              height: double.infinity,
-              child: Center(
-                child: Text('1'),
-              ),
-              decoration: BoxDecoration(color: Colors.green),
-            ),
-            Container(
-              height: double.infinity,
-              child: Center(
-                child: Text('2'),
-              ),
-              decoration: BoxDecoration(color: Colors.redAccent),
-            ),
-            Container(
-              height: double.infinity,
-              child: Center(
-                child: Text('3'),
-              ),
-              decoration: BoxDecoration(color: Colors.grey),
-            ),
-            Container(
-              height: double.infinity,
-              child: Center(
-                child: Text('4'),
-              ),
-              decoration: BoxDecoration(color: Colors.white),
-            ),
-          ]),
+        body: SafeArea(
+          child: CarouselSlider(
+              options: CarouselOptions(height: double.infinity),
+              items: <Widget>[
+                Container(
+                  child: Center(child: Image.asset('answers/1.png')),
+                  decoration: BoxDecoration(color: Colors.greenAccent),
+                ),
+                Container(
+                  child: Center(child: Image.asset('answers/2.png')),
+                  decoration: BoxDecoration(color: Colors.redAccent),
+                ),
+                Container(
+                  child: Center(child: Image.asset('answers/3.png')),
+                  decoration: BoxDecoration(color: Colors.blueGrey),
+                ),
+              ]),
         ),
       ),
     );
